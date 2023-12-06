@@ -24,8 +24,12 @@ let birthYear = Number(userInput);
 
 let zodiacRefNum = (birthYear - 4) % 12;
 
+let inputLength=userInput.length;
 
-if(birthYear === 0 || userInput === null || Number.isNaN(birthYear) ){
+
+
+
+if(birthYear === 0 || userInput === null || Number.isNaN(birthYear) || inputLength !== 4 ){
    alert("Insert proper 4 digit year!")
 }else if(zodiacRefNum === 0){
     alert("Your Chinese zodiac sign is Rat!")

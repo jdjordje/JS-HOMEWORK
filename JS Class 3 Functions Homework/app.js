@@ -105,21 +105,30 @@ Write a JavaScript function that will return:
 
 */
 
-/*
-function dogYears(humanYears){
-    let result = humanYears * 7;
+/*let humanDogInput = prompt("Inser 1 to calculate dog years from human years, insert 2 to calculate human years from dog years.");
+
+let humanDog = Number(humanDogInput);
+
+let yearsToConvert = prompt("Insert number of years to convert");
+
+let yearsToNumber = Number(yearsToConvert);
+
+function humanDogConversion(humanOrDog, yearsToConvert){
+  if(humanOrDog > 3){
+    alert("Inser 1 to calculate dog years, insert 2 to calculate human years.");
+  }else if(humanOrDog ===1){
+    let result = yearsToConvert * 7;
     console.log(`This dog is ${result} dog years old`)
-}
-
-dogYears(66);
-
-function humanYears(dogYears){
-    let result = dogYears / 7;
+  }else if(humanOrDog === 2){
+    let result = yearsToConvert / 7;
     console.log(`This dog is ${result} human years old`)
+  }else{
+    console.log("Invalid input")
+  }
 }
 
-humanYears(30);*/
-
+humanDogConversion(humanDog, yearsToNumber);
+*/
 /*HOMEWORK Part 3
 
 Write a javascript function for an ATM:
@@ -207,4 +216,4 @@ switch (zodiacRefNum) {
   case 11:
     alert("Your Chinese zodiac sign is Pig!");
     break;
-}*/
+}*//**/

@@ -18,16 +18,15 @@ const display = document.querySelector("#display");
 const btn = document.querySelector("#btn");
 
 function Animal(animalName, kind, punchLine) {
-  (this.animalName = animalName),
-    (this.kind = kind),
-    (this.punchLine = punchLine),
-    (this.speak = function () {
-      console.log(`The ${this.kind} named ${animalName} says:${this.punchLine}`);
-    });
+  this.animalName = animalName;
+  this.kind = kind;
+  this.punchLine = punchLine;
+  this.speak = function () {
+    console.log(`The ${this.kind} named ${animalName} says:${this.punchLine}`);
+  };
 }
 
 btn.addEventListener(`click`, function () {
-  display.innerHTML = "";
   const newAnimal = new Animal(animalName.value, kindOfAnimal.value, punchLine.value);
   newAnimal.speak();
   display.innerHTML = `<p>The ${animalName.value} named ${kindOfAnimal.value} says:${punchLine.value}</p>`;

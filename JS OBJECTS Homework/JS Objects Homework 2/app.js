@@ -16,11 +16,12 @@ const check = document.querySelector("#check");
 const btn = document.querySelector("#btn");
 const list = document.querySelector(`.list`);
 
+
 class Book {
-  constructor(bookName, author) {
+  constructor(bookName, author, readStat) {
     this.bookName = bookName;
     this.author = author;
-    this.readStat = false;
+    this.readStat = readStat;
   }
 
   readBook() {
@@ -36,21 +37,24 @@ class Book {
   }
 }
 
+
 btn.addEventListener(`click`, function () {
-  if (bookName.value === "" || author.value === "") {
-    return alert(`Please fill book name and author name`);
-  } else {
-    let book = new Book(bookName.value, author.value);
-    bookName.value = "";
-    author.value = "";
-    if (check.checked === true) {
-      book.readBook();
-      list.innerHTML += `<li>${book.bookName} by ${book.author}has been read.</li>`;
-    } else {
-      list.innerHTML += `<li>${book.bookName} by ${book.author} has not been finished.</li>`;
-    }
-  }
+    if(bookName.value === "" || author.value === ""){
+       return alert(`Please fill book name and author name`)
+    }else{
+  let book = new Book(bookName.value, author.value, check.checked);
+  bookName.value = "";
+  author.value = "";
+  if (check.checked === true) {
+    book.readBook();
+    list.innerHTML += `<li>${book.bookName} by ${book.author}has been read.</li>`
+    }else{
+    list.innerHTML += `<li>${book.bookName} by ${book.author} has not been finished.</li>`
+}
+}
   bookName.value = "";
   author.value = "";
   check.checked = false;
+
 });
+

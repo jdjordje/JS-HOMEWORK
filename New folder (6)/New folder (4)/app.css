@@ -1,0 +1,5 @@
+div {
+  display: grid;
+  height: min-content;
+  width: 100px;
+}

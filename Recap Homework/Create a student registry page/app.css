@@ -1,0 +1,20 @@
+*{
+    font-family: sans-serif;
+    
+}
+
+body{
+    background-color: beige;
+    font-weight: 600;
+}
+
+form{
+    display:grid;
+    height: min-content;
+    width: 50px;
+}
+
+#btn{
+    margin-top: 10px;
+    font-weight: 600;
+}

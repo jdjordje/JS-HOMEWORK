@@ -13,36 +13,41 @@ const items = document.querySelector(`#items`);
 const display = document.querySelector(`.display`);
 const bTn = document.querySelector(`#bTn`);
 
-function clearInput(){
-    color.value = "";
-    fontSize.value = "";
-    items.value = "";
+function clearInput() {
+  color.value = "";
+  fontSize.value = "";
+  items.value = "";
 }
 
-function checkForEmptyInput(color,fontSize,items){
-  if(color.value === "" ||
-   fontSize.value === "" ||
-    items.value === ""){
-      return false;
-  }return true;
+function checkForEmptyInput(color, fontSize, items) {
+  if (color.value === "" || fontSize.value === "" || items.value === "") {
+    return false;
+  }
+  return true;
 }
 
+let inputString = "";
 
-bTn.addEventListener(`click`,function(){
-  
-  if(!checkForEmptyInput(color, fontSize,items)){
-    alert(`Please fill all inputs`)
+bTn.addEventListener(`click`, function () {
+  if (!checkForEmptyInput(color, fontSize, items)) {
+    alert(`Please fill all inputs`);
     return;
-}
+  }
 
+  const unordered = document.createElement(`LI`);
+  console.log(color.value);
 
-   const unordered = document.createElement(`LI`);
-    console.log(color.value)
-   unordered.innerText = `${color.value},${fontSize.value},${items.value}`;
+  inputString = items.value;
+  let inputArr = inputString.split(",");
 
-   display.appendChild(unordered);
+  let listItems = "";
 
-   
-   clearInput();
-    
+  for (let i = 0; i < inputArr.length; i++) {
+    console.log(inputArr[i]);
+    listItems += `<li style="font-size: ${fontSize.value}; color: ${color.value}">${inputArr[i]}</li>`;
+  }
+
+  display.innerHTML = listItems;
+
+  clearInput();
 });

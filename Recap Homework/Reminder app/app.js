@@ -51,7 +51,7 @@ function renderTable() {
         <th>Description</th>
       </tr>
       </thead>
-  
+      <tbody>
       `;
 
   for (let i = 0; i < reminders.length; i++) {
@@ -63,7 +63,12 @@ function renderTable() {
 }
 
 function checkForEmptyInput(title, priority, color, description) {
-  if (title.value === "" || priority.value === "" || color.value === "" || description.value === "") {
+  if (
+    title.value === "" ||
+    priority.value === "" ||
+    color.value === "" ||
+    description.value === ""
+  ) {
     return false;
   }
   return true;
@@ -78,12 +83,17 @@ add.addEventListener(`click`, function () {
   const colorVal = color.value;
   const descriptionVal = description.value;
 
-  if(!checkForEmptyInput(title, priority, color, description)){
-    alert(`Please fill all inputs`)
+  if (!checkForEmptyInput(title, priority, color, description)) {
+    alert(`Please fill all inputs`);
     return;
-}
+  }
 
-  const reminderItem = new Reminder(titleVal, priorityVal, colorVal, descriptionVal);
+  const reminderItem = new Reminder(
+    titleVal,
+    priorityVal,
+    colorVal,
+    descriptionVal
+  );
 
   reminders.push(reminderItem);
 

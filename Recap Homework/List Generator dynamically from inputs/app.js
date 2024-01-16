@@ -29,6 +29,7 @@ function checkForEmptyInput(color, fontSize, items) {
 let inputString = "";
 
 bTn.addEventListener(`click`, function () {
+  display.innerHTML ="";
   if (!checkForEmptyInput(color, fontSize, items)) {
     alert(`Please fill all inputs`);
     return;
